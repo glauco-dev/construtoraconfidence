@@ -1,0 +1,130 @@
+<section class="ui sessao-obrasRealizadas container" id="sessao-obrasRealizadas">
+    <h3 id="sectionTitle" class="ui header center container">Obras Realizadas</h3>
+    <div id="content" class="ui grid container">
+
+        <div class="ui grid stackable destaque-wrapper">
+            <GaleryGeneric class="home_page_carousel ui stackable grid container" @fotos={{this.projetos_to_display}} as
+                |projeto|>
+                <div id="text-content-box" class="five wide column ">
+                    <div id="text-content" class=" ui basic segment">
+                        <h3 class="ui header row">
+                            <LinkTo @route="projeto" @model={{projeto.titulo}}> {{projeto.titulo}} </LinkTo>
+                        </h3>
+                        <div class="row ps">
+                            {{markdown-to-html projeto.desc}}
+                            <br />
+                            Ao lado, {{projeto.featured_image.desc}}
+                        </div>
+                    </div>
+                </div>
+                <div class="nine wide column destaque-img-wrapper ">
+                    <img class="home_featured_img" src={{projeto.featured_image.url}} alt="">
+                </div>
+            </GaleryGeneric>
+        </div>
+    </div>
+</section>
+
+<style>
+    .destaque-wrapper figure {
+        flex-direction: row !important;
+    }
+
+
+    .sessao-obrasRealizadas {
+        display: flex;
+        padding-bottom: 10vh;
+        padding-top: 5rem;
+        width: 100vw !important;
+        position: relative;
+        background-color: transparent;
+        margin-inline: auto;
+        color: #9ccdec;
+        background-image: url({{root-url "assets/wallpaperflare.com_wallpaper_worked.png"}});
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    
+    .sessao-obrasRealizadas #content {
+        min-height: 300px;
+        margin-inline: auto;
+        color: #9ccdec;
+        padding-top: 30px;
+    }
+
+    #content .destaque-wrapper {
+        position: relative;
+        max-width: 100%;
+        background-image: url(/assets/logos/fulllogo.svg);
+        background-repeat: no-repeat;
+        background-size: 69%;
+        background-position: 34% 69%;
+    }
+
+    #content .destaque-img-wrapper {
+        display: flex;
+        max-height: 100%;
+        justify-content: end;
+    }
+
+    #content .imggalery {
+        max-width: 100%;
+    }
+
+    #content img {
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    @media (max-width: 500px) {
+        #content img {
+            height: 80vw;
+        }
+    }
+
+    @media (min-width: 500px) {
+        #content img {
+            height: 40vh;
+        }
+    }
+
+    #text-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #content #text-content-box {
+        font-family: 'Oswald', sans-serif;
+        display: flex;
+        height: fit-content;
+        margin-bottom: auto;
+        background-color: rgb(18 56 86);
+        box-shadow: -1px 0px 2px #00000026;
+        text-align: left;
+    }
+
+    #content #text-content h3 {
+        text-shadow: 1px 0px black;
+        color: #9ccdec;
+        font-size: 16pt;
+    }
+
+    #content #text-content .ps {
+        font-size: 1.5rem;
+        white-space: initial;
+    }
+
+
+    @media (max-width: 500px) {
+        #content #text-content h3 {
+            font-size: 14pt;
+            white-space: break-spaces;
+        }
+
+        #content #text-content .ps {
+            font-size: 10pt;
+        }
+    }
+</style>

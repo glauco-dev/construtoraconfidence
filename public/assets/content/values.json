@@ -1,0 +1,26 @@
+[
+    {
+        "icon": "/assets/logos/sessão valores/checklist-icon.svg",
+        "titulo": "Equipamentos e tecnologia modernos",
+        "display_img": "/assets/imgs/sessão valores/tecnologias.jpg",
+        "texto": "As inovações na construção civil são soluções técnicas que auxiliam na otimização dos processos de construção e no resultado da obra. Essas tecnologias visam resolver problemas que podem aparecer durante a execução do projeto, aumentar a produtividade e garantir a sustentabilidade no setor civil."
+    },
+    {
+        "icon": "/assets/logos/sessão valores/safety-helmet-icon.svg",
+        "titulo": "Forte gestão de risco",
+        "display_img": "/assets/imgs/sessão valores/gestão de risco.jpg",
+        "texto": "A gestão de riscos é um dos elementos mais importantes de uma boa construção. Para nós é fundamental que sejamos capaz de lidar com isso por meio de um forte gerenciamento de risco."
+    },
+    {
+        "icon": "/assets/logos/sessão valores/success-aim-icon.svg",
+        "titulo": "Experiência e sucesso",
+        "display_img": "/assets/imgs/sessão valores/experiência de sucesso.jpg",
+        "texto": "Outra qualidade forte a ser buscada em uma empresa de construção é um histórico comprovado de sucesso e uma profunda experiência relacionada ao setor."
+    },
+    {
+        "icon": "/assets/logos/sessão valores/qualify-team-icon.svg",
+        "titulo": "Uma equipe qualificada",
+        "display_img": "/assets/imgs/sessão valores/equipe qualificada.jpg",
+        "texto": "A construção bem sucedida requer uma equipe muito diversificada de profissionais altamente qualificados."
+    }
+]

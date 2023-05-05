@@ -1,0 +1,25 @@
+{{page-title "Sobre - Construtora Confidence"}}
+<Navbar/>
+{{#if @model}}
+    <div id="about_section" class="ui container">
+        <div class="ui segment">
+            <h2>
+                Informações sobre Construtora Confidence
+            </h2>
+        </div>
+        {{markdown-to-html 
+            tables=true 
+            extensions='tableClass'
+            markdown=@model }} 
+    </div>
+{{else}}
+    <h3>what</h3>
+{{/if}}
+{{outlet}}
+
+
+<style>
+    #about_section {
+        margin-top: 7vh;
+    }
+</style>

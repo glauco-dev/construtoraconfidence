@@ -1,0 +1,86 @@
+<div class="app imggalery {{@classing}}"  style={{@styling}}>
+    <div id="carousel"  class="snap" style={{@carouselStyling}}>
+        {{#each @fotos as |foto index|}}
+        <figure id="carousel-{{index}}" class="card-figure" ...attributes>
+            {{#if (has-block)}}
+                {{yield foto}}
+            {{else}}
+                <SimpleFotoWithCaption @styling={{@imgStyling}} @foto={{foto}}/>
+            {{/if}}
+        </figure>
+        {{/each}}
+    </div>
+</div>
+
+<style>
+    #carousel {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        display: flex;
+    }
+
+    #carousel {
+        position: relative;
+        width: 100%;
+    }
+
+    #carousel> .card-figure {
+        min-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        font-size: 12pt;
+        gap: 2vh;
+    }
+
+    #carousel>.card-figure img {
+        height: 75vh;
+        object-fit: contain;
+    }
+
+    @media (max-width: 500px) {
+        #carousel>.card-figure img {
+            height: 90vw;
+        }
+    }
+
+    #carousel>.card-figure>* {
+        max-width: 90%;
+    }
+
+    #carousel>.card-figure>figcaption {
+        white-space: break-spaces;
+    }
+
+
+    /* 2018 spec - For Safari 11, Chrome 69+ */
+    #carousel.snap {
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        /* Needed to work on iOS Safari */
+    }
+
+    #carousel.snap>figure {
+        scroll-snap-align: center;
+    }
+
+
+
+    /* 2015 spec - For Firefox, Edge, IE */
+    #carousel.snap {
+        scroll-snap-type: mandatory;
+        -ms-scroll-snap-type: mandatory;
+        scroll-snap-points-x: repeat(100%);
+        -ms-scroll-snap-points-x: repeat(100%);
+    }
+
+    #carousel.snap.vertical {
+        scroll-snap-points-x: initial;
+        -ms-scroll-snap-points-x: initial;
+        scroll-snap-points-y: repeat(100%);
+        -ms-scroll-snap-points-y: repeat(100%);
+    }
+</style>

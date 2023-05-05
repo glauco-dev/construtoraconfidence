@@ -1,7 +1,28 @@
 {{page-title "Construtoraconfidence"}}
-
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
 {{outlet}}
+<div id="footer_logo" class="ui centered">
+    <img src={{root-url "assets\logos\logo fundo alternativo.svg" }} alt="" style="width: 30vw">
+</div>
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+<style>
+    #footer_logo {
+        margin-top: 15vh !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        fill: transparent;
+        background-color: #105584ff;
+        padding: 4rem;
+    }
+</style>

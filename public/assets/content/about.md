@@ -1,0 +1,39 @@
+|                                                                              |                                                                                                                    |
+|------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| **QUADRO DE SÓCIOS E ADMINISTRADORES (QSA):**                                | **DATA DE ABERTURA:** 16/10/2017                                                                                   |
+| ALBERTO MARLON DE OLIVEIRA                                                   | **ENDEREÇO:** : COLINA DO SUL, FRAC 8, AV GOIABEIRAS II, 45099-899                                                 |
+| **IDADE:**                                                                   | 5 ANOS, 6 MESES E 2 DIAS                                                                                           |
+| TELEFONES e EMAILS:                                                          | (77) 9940-8745 \| contato@construtoraconfidence.com                                                                |
+|                                                                              |                                                                                                                    |
+| **ATIVIDADE ECONÔMICA PRINCIPAL:**                                           | **CONSTRUÇÃO DE EDIFÍCIOS**                                                                                        |
+| CÓDIGO                                                                       | 41.20-4-00                                                                                                         |
+|                                                                              |                                                                                                                    |
+| **ATIVIDADES ECONÔMICAS SECUNDÁRIAS:**                                       |                                                                                                                    |
+| **CÓDIGO**                                                                   | **DESCRIÇÃO**                                                                                                      |
+| 25.99-3-01                                                                   | SERVIÇOS DE CONFECÇÃO DE ARMAÇÕES METÁLICAS PARA A CONSTRUÇÃO                                                      |
+| 42.11-1-01                                                                   | CONSTRUÇÃO DE RODOVIAS E FERROVIAS                                                                                 |
+| 42.11-1-02                                                                   | PINTURA PARA SINALIZAÇÃO EM PISTAS RODOVIÁRIAS E AEROPORTOS                                                        |
+| 42.13-8-00                                                                   | OBRAS DE URBANIZAÇÃO - RUAS, PRAÇAS E CALÇADAS                                                                     |
+| 42.22-7-01                                                                   | CONSTRUÇÃO DE REDES DE ABASTECIMENTO DE ÁGUA, COLETA DE ESGOTO E CONSTRUÇÕES CORRELATAS, EXCETO OBRAS DE IRRIGAÇÃO |
+| 42.92-8-01                                                                   | MONTAGEM DE ESTRUTURAS METÁLICAS                                                                                   |
+| 42.99-5-01                                                                   | CONSTRUÇÃO DE INSTALAÇÕES ESPORTIVAS E RECREATIVAS                                                                 |
+| 43.11-8-02                                                                   | PREPARAÇÃO DE CANTEIRO E LIMPEZA DE TERRENO                                                                        |
+| 43.12-6-00                                                                   | PERFURAÇÕES E SONDAGENS                                                                                            |
+| 43.21-5-00                                                                   | INSTALAÇÃO E MANUTENÇÃO ELÉTRICA                                                                                   |
+| 43.22-3-01                                                                   | INSTALAÇÕES HIDRÁULICAS, SANITÁRIAS E DE GÁS                                                                       |
+| 43.30-4-01                                                                   | IMPERMEABILIZAÇÃO EM OBRAS DE ENGENHARIA CIVIL                                                                     |
+| 43.30-4-02                                                                   | INSTALAÇÃO DE PORTAS, JANELAS, TETOS, DIVISÓRIAS E ARMÁRIOS EMBUTIDOS DE QUALQUER MATERIAL                         |
+| 43.30-4-03                                                                   | OBRAS DE ACABAMENTO EM GESSO E ESTUQUE                                                                             |
+| 43.30-4-04                                                                   | SERVIÇOS DE PINTURA DE EDIFÍCIOS EM GERAL                                                                          |
+| 43.30-4-99                                                                   | OUTRAS OBRAS DE ACABAMENTO DA CONSTRUÇÃO                                                                           |
+| 43.91-6-00                                                                   | OBRAS DE FUNDAÇÕES                                                                                                 |
+| 43.99-1-01                                                                   | ADMINISTRAÇÃO DE OBRAS                                                                                             |
+| 43.99-1-03                                                                   | OBRAS DE ALVENARIA                                                                                                 |
+| 43.99-1-05                                                                   | PERFURAÇÃO E CONSTRUÇÃO DE POÇOS DE ÁGUA                                                                           |
+| 43.99-1-99                                                                   | SERVIÇOS ESPECIALIZADOS PARA CONSTRUÇÃO NÃO ESPECIFICADOS ANTERIORMENTE                                            |
+| 71.11-1-00                                                                   | SERVIÇOS DE ARQUITETURA                                                                                            |
+| 71.12-0-00                                                                   | SERVIÇOS DE ENGENHARIA                                                                                             |
+| 71.19-7-01                                                                   | SERVIÇOS DE CARTOGRAFIA, TOPOGRAFIA E GEODÉSIA                                                                     |
+| 71.19-7-03                                                                   | SERVIÇOS DE DESENHO TÉCNICO RELACIONADOS À ARQUITETURA E ENGENHARIA                                                |
+| 71.20-1-00                                                                   | TESTES E ANÁLISES TÉCNICAS                                                                                         |
+| 81.21-4-00                                                                   | LIMPEZA EM PRÉDIOS E EM DOMICÍLIOS                                                                                 |

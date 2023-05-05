@@ -1,0 +1,55 @@
+<div id="navbar" class="ui attached stackable menu">
+    <div class="ui container">
+        <LinkTo @route="index" class="item" style="padding: 15px">
+            <img src={{root-url "/assets/logos/logo_C.svg" }} />
+        </LinkTo>
+        {{#each this.nav_config_data as |item|}}
+        <a class="item" href="{{item.link}}">
+            <i class="fa-solid fa-building-circle-check"></i> {{item.text}}
+        </a>
+        {{/each}}
+    </div>
+    <div class="right item">
+        <LinkTo @route="about" class="item" style="padding: 15px">
+            <i class="fa-solid fa-file-contract"></i> Informações 
+        </LinkTo>
+        <LinkTo @route="contato" class="item" style="padding: 15px">
+            <i class="fa-solid fa-phone"></i> Contato 
+        </LinkTo>
+    </div>
+</div>
+
+
+
+<style>
+    #navbar {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 50px;
+        z-index: 100;
+        transition: 250ms ease;
+        opacity: 0;
+    }
+
+    #navbar .item {
+        background-color: white;
+    }
+
+    #navbar i {
+        margin-right: 10px;
+        color: #105584;
+    }
+</style>
+
+<script>
+    function checkWindowScrollY (){
+        setNavBarOpacity(window.pageYOffset > 180)
+    }
+
+    function setNavBarOpacity(OnOff){
+        $('#navbar').css('opacity', OnOff? '1': '0')
+    }
+    window.addEventListener('scroll', checkWindowScrollY)
+    checkWindowScrollY();
+</script>

@@ -1,0 +1,71 @@
+<div id="landing" class="ui container w-full">
+    <div class="ui container center aligned ">
+        <img src={{root-url "assets/logos/fulllogo.svg"}} alt="" id="logo" class="ui center">
+        <h2 id="copy">Contruimos Obras de alta qualidade por toda Bahia</h2>
+    </div>
+    <div id="acoes" class="ui two column stackable center aligned grid">
+        <div class="column">
+            <ui class="button basic">Conheça nossas obras</ui>
+        </div>
+        <div class="column">
+            <ui class="button basic">Entre em contato</ui>
+        </div>
+    </div>
+    <h3 id="clientes" class="ui container center aligned flex">
+        Nossos principais clientes <img src={{root-url "assets/logos/Coca-Cola_logo.svg"}} alt="" /> <img src={{root-url "assets/logos/sudesblogo.png"}} style="height: 50px !important; margin-top: -20px; margin-bottom: -20px" alt="" />
+    </h3>
+</div>
+
+<style>
+    #landing{
+        width: 100vw;
+        height: 100vh;
+        padding-top: 0px;
+        display: flex;
+        flex-direction: column;
+        margin-top: auto;
+        margin-bottom: auto;
+        background-image: url({{root-url "assets/logos/logographics.svg"}});
+        background-size: cover;
+        background-position: center 0%;
+    }
+    #landing > div:first-child{
+        margin-bottom: 20px;
+    }
+    #landing #copy{
+        font-family: segoe;
+        font-weight: 100;
+        font-size: 2.05rem;
+    }
+    #landing> div{
+        margin: 20px;
+    }
+    #lading > .container{
+        margin: 15px;
+    }
+    #logo{
+        max-height: 500px;
+        display: flex;
+        height: 55vh;
+        max-width: 100%;
+        margin-inline: auto;
+    }
+    #acoes{
+        align-self: center;
+        max-width: 500px;
+        font-size: 14pt;
+        margin-inline: auto ;
+    }
+    #clientes{
+        font-family: segoe;
+        display: flex;
+        justify-content: center;
+        font-weight: 200;
+        gap: 15px;
+        margin-bottom: 50px;
+    }
+    #clientes img{
+        height: 30px;
+        align-self: center;
+    }
+</style>

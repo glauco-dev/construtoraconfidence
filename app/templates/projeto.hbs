@@ -1,0 +1,6 @@
+<Navbar />
+{{#if @model.status}}
+    <ProjectContent @content_source = {{@model.url}} />
+{{else}}
+    <h2>Error</h2>
+{{/if}}

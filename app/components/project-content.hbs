@@ -1,0 +1,163 @@
+<div id="project_content_wrapper">
+
+  <div id="titulo-wrapper" style="--capa: url('{{this.capa}}'); --capa-y-pos: {{this.yPos}}">
+    <h1 id="titulo" class="ui container">
+      {{markdown-to-html this.titulo}}
+    </h1>
+  </div>
+
+
+  <div id="desc" class="ui centered">
+    <div class="ui grid stackable two column container wrapper">
+      <div class="column">
+        {{markdown-to-html this.desc}}
+      </div>
+      <GaleryGeneric @classing="column" @carouselStyling="height:100%;" @styling="
+          background-image: url({{root-url " assets/logos/logo_C.svg" }}); align-items: center; height: 50vh;
+        background-size: contain; background-repeat: no-repeat; background-position: center" @fotos={{this.fotos}} as
+        |foto|>
+        <img src="{{foto}}" alt="" style="height: 100%">
+      </GaleryGeneric>
+    </div>
+  </div>
+
+  <div id="roadmap">
+    <div class="ui container">
+      <h2>Roadmap</h2>
+      {{markdown-to-html this.road_map_content}}
+
+    </div>
+  </div>
+
+  <div id="galeria_da_obra" class="ui container">
+    <h2 class="centered" style="padding-left: 20vw;">Fotos da obra</h2>
+    <GaleryGeneric @imgStyling="height:62vh" @fotos={{this.fotos_documentativas}} as |foto| />
+  </div>
+
+ 
+
+</div>
+
+
+<style class="galeria_styling">
+  #project_content_wrapper #titulo-wrapper {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)), var(--capa);
+    background-size: cover;
+    background-position: 0% var(--capa-y-pos);
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 40vh;
+    max-height: 40vh;
+    display: flex;
+    align-items: end;
+    margin-top: 0px;
+  }
+
+  #project_content_wrapper #titulo-wrapper h1 {
+    flex-wrap: wrap;
+    line-height: baseline;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    align-items: baseline;
+    display: flex;
+  }
+
+  #project_content_wrapper #titulo-wrapper h1 p {
+    color: white;
+    background-image: url(/assets/logos/logo_C.svg);
+    background-size: 16%;
+    background-position: -0.3% 0%;
+    font-family: 'Anuphan', sans-serif;
+    background-repeat: no-repeat;
+    padding: 25px;
+    padding-left: 25px;
+    padding-left: 20px;
+    padding-left: 3rem;
+    font-size: 2.5rem;
+    text-shadow: 0 1px 0 black;
+  }
+
+  #titulo-wrapper h1 img {
+    margin-right: -2.5rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    width: 80px;
+  }
+
+  #project_content_wrapper>div {
+    min-height: 40vh;
+    padding-top: 12vh;
+    padding-bottom: 12vh;
+
+  }
+
+  #project_content_wrapper #desc {
+    font-size: 12pt;
+    color: #333c;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 10rem;
+    display: flex;
+    letter-spacing: 0.5px;
+    height: 100%;
+  }
+
+  @media (max-width: 500px) {
+    #project_content_wrapper #titulo-wrapper {
+      padding-bottom: 0px;
+    }
+
+    #project_content_wrapper #desc {
+      padding-top: 2rem;
+    }
+  }
+
+  #project_content_wrapper #desc .ui>.column:first-child {
+    border-bottom: 1px solid #105584;
+  }
+
+
+  #project_content_wrapper h2 {
+    font-size: 3rem;
+    color: #105584;
+    font-family: 'Anuphan', sans-serif;
+    letter-spacing: -1.5px;
+  }
+
+  #desc .ember-view {
+    position: relative;
+    z-index: 10;
+    font-weight: 100;
+  }
+
+  #project_content_wrapper #roadmap {
+    background: url(/assets/logos/logo_C.svg), #105584ff;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    color: #ffffff;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: -5% 45%;
+    padding-left: 27vw;
+  }
+
+  #project_content_wrapper #roadmap h2 {
+    color: white;
+    font-size: 4rem;
+  }
+
+  #project_content_wrapper #galeria_da_obra {
+    min-height: min-content;
+    padding-bottom: 0px;
+  }
+
+  #project_content_wrapper #galeria_da_obra h2 {
+    font-size: 3rem;
+  }
+
+  #project_content_wrapper #galeria_da_obra img {
+    height: 62vh;
+  }
+
+
+</style>
