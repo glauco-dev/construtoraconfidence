@@ -60,3 +60,28 @@ section {
   color: #9ccdec;
   text-shadow: 1px 0px black;
 }
+
+.content-header-img {
+  margin-left: 20px;
+  height: 350px;
+  float: right;
+  width: 40vw;
+  object-fit: cover;
+}
+
+.content-middle-img {
+  margin-right: 20px;
+  height: 350px;
+  float: left;
+  width: 30vw;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (max-width: 544px) {
+  .content-header-img,
+  .content-middle-img {
+    width: 100%;
+    margin-inline: 0px;
+  }
+}

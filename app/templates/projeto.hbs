@@ -1,4 +1,4 @@
-<Navbar />
+<Navbar @doesFade={{false}} @fadePoint={{0}}/>
 {{#if @model.status}}
     <ProjectContent @content_source = {{@model.url}} />
 {{else}}

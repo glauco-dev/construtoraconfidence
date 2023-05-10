@@ -4,8 +4,8 @@ import { tracked } from '@glimmer/tracking';
 export default class ProjectContentComponent extends Component {
   @tracked road_map_content;
   @tracked desc;
-  @tracked fotos_documentativas = [{ url: '', desc: '' }];
-  @tracked fotos = [];
+  @tracked short_desc;
+  @tracked fotos = [{ url: '', desc: '' }];
   @tracked wrapper_coluns_layout = '';
   @tracked titulo = '';
   @tracked capa = '';
@@ -23,22 +23,17 @@ export default class ProjectContentComponent extends Component {
         this.desc = await data.text();
       }
     });
-    fetch(this.args.content_source + '/fotos documentativas.json').then(
-      async (data) => {
-        if (data.ok) {
-          this.fotos_documentativas = (await data.json()).map((el) => ({
-            url: this.args.content_source + '/fotos/' + el.url,
-            desc: el.desc,
-          }));
-        }
+    fetch(this.args.content_source + '/short_desc.md').then(async (data) => {
+      if (data.ok) {
+        this.short_desc = await data.text();
       }
-    );
+    });
     fetch(this.args.content_source + '/fotos.json').then(async (data) => {
       if (data.ok) {
         this.fotos = (await data.json()).map(
-          (el) => this.args.content_source + '/fotos/' + el
+          (el) => ({...el, url: this.args.content_source + '/fotos/' + el.url})
         );
-        this.capa = this.fotos[0];
+        this.capa = this.fotos[0].url;
       }
     });
 

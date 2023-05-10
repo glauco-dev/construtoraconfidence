@@ -3,7 +3,7 @@
     <div id="content" class="ui grid container">
 
         <div class="ui grid stackable destaque-wrapper">
-            <GaleryGeneric class="home_page_carousel ui stackable grid container" @fotos={{this.projetos_to_display}} as
+            <GaleryGeneric style="justify-content:space-around" class="home_page_carousel ui stackable grid container" @fotos={{this.projetos_to_display}} as
                 |projeto|>
                 <div id="text-content-box" class="five wide column ">
                     <div id="text-content" class=" ui basic segment">
@@ -11,7 +11,7 @@
                             <LinkTo @route="projeto" @model={{projeto.titulo}}> {{projeto.titulo}} </LinkTo>
                         </h3>
                         <div class="row ps">
-                            {{markdown-to-html projeto.desc}}
+                            {{markdown-to-html projeto.short_desc}}
                             <br />
                             Ao lado, {{projeto.featured_image.desc}}
                         </div>
@@ -74,8 +74,10 @@
     }
 
     #content img {
-        max-width: 100%;
-        object-fit: contain;
+        height: 60vh !important;
+        object-fit: cover !important;
+        width: 100%;
+        object-position: top;   
     }
 
     @media (max-width: 500px) {

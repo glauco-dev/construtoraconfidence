@@ -16,6 +16,18 @@ export default class NavBarComponent extends Component {
   constructor() {
     super(...arguments);
 
+    let checkWindowScrollY = () => {
+      setNavBarOpacity(window.pageYOffset > this.args.fadePoint )
+    }
+
+    let setNavBarOpacity = (OnOff) => {
+        $('#navbar').css('opacity', OnOff? '1': '0')
+    }
+    if(this.args.doesFade) {
+      window.addEventListener('scroll', checkWindowScrollY)
+      checkWindowScrollY();
+    }
+
     // testing: passou
     // console.log(this.router.currentRouteName, " <= deve ser a rota atual, ignorando qualquer outra info")
 
@@ -35,5 +47,6 @@ export default class NavBarComponent extends Component {
         }
       }
     );
+    
   }
 }

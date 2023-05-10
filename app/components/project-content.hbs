@@ -1,57 +1,149 @@
+{{!--
+
+# Página de trabalho da construtora
+A construtora aqui precisa explicar o trabalho que faz com a cidade e documentar o trabalho como está sendo feito ou
+finalizado
+
+farei isso em três sessões:
+- apresentação:
+- Título do projeto, seguido de uma introdução a cidade, finalizando com um hook a um parágrafo de como a construtora
+visa o seu trabalho nela.
+- Essa sessão utiliza-se de fotos da obra e da cidade como plano de fundo da sessão, o design dessa sessão precisa ter
+uma natureza governamental, então cor branca e imagens com brilho branco nelas para composição
+- roadmap
+- Título, descrição explicativa abaixo do título, contendo que a fonte para seu conteúdo é atualizado dos relatórios
+periódicos da obra
+- É a sessão que pode ter design mais técnico, expresso pelo plano de fundo com a logo gráfica e o contraste elegante
+- Conteúdo é tópicos das etapas, então um texto em formato de lista
+- Galeria
+- Sessão de fotos gerais da obra, e possue um design de galeria horizontal comum no mobile, e uma grid full screen com
+direito a interação com hover e click no desktop
+
+
+--}}
+
 <div id="project_content_wrapper">
-
-  <div id="titulo-wrapper" style="--capa: url('{{this.capa}}'); --capa-y-pos: {{this.yPos}}">
-    <h1 id="titulo" class="ui container">
-      {{markdown-to-html this.titulo}}
-    </h1>
+  <div class="capa_wrapper">
+    <div class="ui container">
+      <h1>{{this.titulo}}</h1>
+    </div>
   </div>
+  <div id="desc" class="ui container">
+    <div class="content">
 
+      {{!-- O título e descrição aqui --}}
 
-  <div id="desc" class="ui centered">
-    <div class="ui grid stackable two column container wrapper">
-      <div class="column">
-        {{markdown-to-html this.desc}}
-      </div>
-      <GaleryGeneric @classing="column" @carouselStyling="height:100%;" @styling="
-          background-image: url({{root-url " assets/logos/logo_C.svg" }}); align-items: center; height: 50vh;
-        background-size: contain; background-repeat: no-repeat; background-position: center" @fotos={{this.fotos}} as
-        |foto|>
-        <img src="{{foto}}" alt="" style="height: 100%">
-      </GaleryGeneric>
+      {{markdown-to-html this.desc}}
+      {{!-- A descrição tem que ser produzida de tão forma a começar com o subtítulo, seguido do conteúdo --}}
+
+      {{markdown-to-html this.short_desc}}
+      {{!-- Aqui vai a versão curta de descrição, que aparece na página inicial em destaque --}}
+
     </div>
   </div>
 
+  {{!-- Roadmap aqui --}}
   <div id="roadmap">
     <div class="ui container">
       <h2>Roadmap</h2>
+      <small class="section-sub-titulo">descrição detalhada do andamento da obra por meio de etapas</small>
       {{markdown-to-html this.road_map_content}}
-
     </div>
   </div>
 
-  <div id="galeria_da_obra" class="ui container">
-    <h2 class="centered" style="padding-left: 20vw;">Fotos da obra</h2>
-    <GaleryGeneric @imgStyling="height:62vh" @fotos={{this.fotos_documentativas}} as |foto| />
+
+
+  {{!-- fotos diretamente de projetos/,,/fotos --}}
+  {{!-- NOTE done: Block abaixo para versão mobile, tenho ver como dinamizar isso no emberjs --}}
+
+  <div id="galeria" class="mobile-gallery ui container">
+    <h2 class="centered">Fotos da obra</h2>
+    <small class="section-sub-titulo">Galeria completa de nossas imagens da obra até o momento</small>
+    <GaleryGeneric @imgStyling="height:62vh" @fotos={{this.fotos}} as |foto| />
   </div>
 
- 
+  <div id="galeria" class="desktop-gallery ui container">
+    <h2 class="centered">Fotos da obra</h2>
+    <small class="section-sub-titulo">Galeria completa de nossas imagens da obra até o momento</small>
+    <ul class="image-gallery">
+      {{#each this.fotos as |foto index|}}
+      <li>
+        <img src="{{foto.url}}" alt="" />
+        <div class="overlay"><span>{{foto.desc}}</span></div>
+      </li>
+      {{/each}}
+      <!-- other items here -->
+    </ul>
+  </div>
+  {{!-- --}}
 
 </div>
 
 
 <style class="galeria_styling">
-  #project_content_wrapper #titulo-wrapper {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3),
-        rgba(0, 0, 0, 0.3)), var(--capa);
-    background-size: cover;
-    background-position: 0% var(--capa-y-pos);
-    background-attachment: fixed;
-    width: 100%;
-    min-height: 40vh;
-    max-height: 40vh;
+  /** 
+  Bloco de estilo para a galeria versão desktop  
+  **/
+  ul {
+    list-style: none;
+  }
+
+  .image-gallery {
     display: flex;
-    align-items: end;
-    margin-top: 0px;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-left: 0px;
+  }
+
+  .image-gallery>li {
+    flex: 1 1 auto;
+    /* or flex: auto; */
+    height: 300px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .image-gallery::after {
+    content: "";
+    flex-grow: 999;
+  }
+
+  .image-gallery li img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    border-radius: 5px;
+  }
+
+  .image-gallery .overlay {
+    position: absolute;
+    padding: 1.4rem;
+    width: 100%;
+    height: 100%;
+    background: rgba(57, 57, 57, 0.502);
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    transition: all 0.2s 0.1s ease-in-out;
+    color: #fff;
+    border-radius: 5px;
+    /* center overlay content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* hover */
+
+  .image-gallery li:hover .overlay {
+    transform: scale(1);
+  }
+
+  /* desktop gallery styling end */
+
+  #project_content_wrapper {
+    padding-top: 0rem;
   }
 
   #project_content_wrapper #titulo-wrapper h1 {
@@ -85,32 +177,64 @@
     width: 80px;
   }
 
-  #project_content_wrapper>div {
-    min-height: 40vh;
-    padding-top: 12vh;
-    padding-bottom: 12vh;
-
-  }
-
   #project_content_wrapper #desc {
     font-size: 12pt;
     color: #333c;
     font-family: 'Poppins', sans-serif;
-    padding-top: 10rem;
     display: flex;
     letter-spacing: 0.5px;
     height: 100%;
   }
 
-  @media (max-width: 500px) {
-    #project_content_wrapper #titulo-wrapper {
-      padding-bottom: 0px;
-    }
-
-    #project_content_wrapper #desc {
-      padding-top: 2rem;
-    }
+  #project_content_wrapper h2 {
+    font-size: 3rem;
+    color: #105584;
+    font-family: 'Anuphan', sans-serif;
+    letter-spacing: -1.5px;
   }
+
+
+  #desc .content {
+    text-align: justify;
+    padding-top: 3rem;
+    padding-bottom: 8rem;
+  }
+
+  .capa_wrapper {
+    height: 13.2rem;
+    margin-bottom: -3.2rem;
+    display: flex;
+    align-items: end;
+    padding-bottom: 1.2rem;
+    position: relative;
+  }
+
+  .capa_wrapper::before {}
+
+  .capa_wrapper h1 {
+    font-size: 4rem;
+    color: #105584;
+    position: relative
+  }
+
+  #desc .content .ember-view {
+    margin-bottom: 2rem;
+  }
+
+  .section-sub-titulo {
+    top: -1.5rem;
+    position: relative;
+  }
+
+  .mobile-gallery {
+    display: none !important;
+  }
+
+  .desktop-gallery {
+    display: block !important;
+  }
+
+
 
   #project_content_wrapper #desc .ui>.column:first-child {
     border-bottom: 1px solid #105584;
@@ -139,6 +263,7 @@
     background-repeat: no-repeat;
     background-position: -5% 45%;
     padding-left: 27vw;
+    width: 100vw !important;
   }
 
   #project_content_wrapper #roadmap h2 {
@@ -146,18 +271,34 @@
     font-size: 4rem;
   }
 
-  #project_content_wrapper #galeria_da_obra {
+  #project_content_wrapper #galeria {
+    padding-top: 4rem;
     min-height: min-content;
     padding-bottom: 0px;
   }
 
-  #project_content_wrapper #galeria_da_obra h2 {
-    font-size: 3rem;
+  @media (max-width: 766px) {
+    .mobile-gallery {
+      display: block !important;
+    }
+
+    .desktop-gallery {
+      display: none !important;
+    }
   }
 
-  #project_content_wrapper #galeria_da_obra img {
-    height: 62vh;
+  @media (max-width: 544px) {
+    #project_content_wrapper #titulo-wrapper {
+      padding-bottom: 0px;
+    }
+
+    #project_content_wrapper #roadmap {
+
+      padding-left: 0px;
+    }
+
+    #project_content_wrapper #desc {
+      padding-top: 2rem;
+    }
   }
-
-
 </style>

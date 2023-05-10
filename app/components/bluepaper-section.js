@@ -9,7 +9,7 @@ export default class BluePaperSection extends Component {
       this.args.projetos_to_display.map(async (project_url) => {
         let titulo = project_url.split('/').pop();
         let featured_img_ref = await (
-          await fetch(project_url + '/fotos documentativas.json')
+          await fetch(project_url + '/fotos.json')
         ).json();
 
         let img_data = await featured_img_ref[0];
@@ -17,6 +17,7 @@ export default class BluePaperSection extends Component {
         return {
           titulo,
           featured_image: img_data,
+          short_desc: await (await fetch(project_url + '/short_desc.md')).text(),
           desc: await (await fetch(project_url + '/desc.md')).text(),
         };
       })

@@ -29,7 +29,7 @@
         height: 50px;
         z-index: 100;
         transition: 250ms ease;
-        opacity: 0;
+        opacity: 1;
     }
 
     #navbar .item {
@@ -43,13 +43,5 @@
 </style>
 
 <script>
-    function checkWindowScrollY (){
-        setNavBarOpacity(window.pageYOffset > 180)
-    }
-
-    function setNavBarOpacity(OnOff){
-        $('#navbar').css('opacity', OnOff? '1': '0')
-    }
-    window.addEventListener('scroll', checkWindowScrollY)
-    checkWindowScrollY();
+    
 </script>
