@@ -1,4 +1,82 @@
-<Navbar @fadePoint={{100}} @fade={{"0"}}/>
-<Landing/>
-<BluepaperSection/>
-<ValoresSection @valoresContent={{@model.valoresContent}}/>
+{{!-- barra de navegação configurada para opacidade inicial de 0
+e fade point para 100px fora do topo
+--}}
+<Navbar @fadePoint={{100}} @fade={{"0"}} />
+
+{{!-- Componente exclusivo para landing page --}}
+<Landing />
+
+{{!-- Aqui precisa de uma sessão apresentativa real para o visitante
+pode-se misturar:
+história da empresa
+&
+cidades e setores que trabalha
+(pode ser feito a partir de um arquivo .md)
+--}}
+<div id="apresentativo" class="ui container segment padded piled">
+    <div class="content">
+
+        {{markdown-to-html
+        ghCompatibleHeaderId=true
+        tasklists=true
+        simpleLineBreaks=true
+        requireSpaceBeforeHeadingText=true
+        markdown=@model.apresentativo}}
+
+    </div>
+</div>
+
+<style>
+    #apresentativo {
+        font-size: 150%;
+        padding-bottom: 10rem;
+        padding-top: 0rem;
+        padding-inline: 6vw;
+        margin-top: -105vh;
+    }
+
+    #apresentativo h3 {
+        color: rgb(16, 85, 132);
+        font-size: 170%;
+        margin-top: 3rem;
+    }
+
+    #apresentativo h3#nossa-história {
+        padding-top: 2rem;
+        margin-top: 0rem;
+    }
+
+    #apresentativo ul {
+        display: grid;
+        gap: 20px
+    }
+
+    #apresentativo ul li {
+        font-size: 120%;
+    }
+
+    #apresentativo small {
+        margin-top: -1.5rem;
+        position: relative;
+        padding-bottom: 0rem;
+        display: block;
+        color: #7097b0;
+    }
+</style>
+
+
+{{!-- Sessão de portifólio inicial registrada como bluepaper section, por causa do papel de parede ao fundo que imita
+uma blueprint --}}
+<BluepaperSection />
+
+{{!-- sessão de valores da empresa, em tópicos TODO **polir** --}}
+<ValoresSection @valoresContent={{@model.valoresContent}} />
+
+{{!--
+Sessão de wrap da página
+objetivos: indicar ao visitante a perspectiva de que chegou ao fim da página
+sem deixar o visitante sem opções, a narrativa tem que se manter flúida
+então:
+ele ja viu:
+as o
+--}}

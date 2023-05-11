@@ -46,6 +46,6 @@ export default class ObrasRealizadasService extends Service {
           fotos,
         };
       })
-    ).then(data=> this.data = data);
+    ).then((data) => (this.data = data));
   }
 }

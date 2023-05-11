@@ -36,10 +36,10 @@ direito a interação com hover e click no desktop
 
       {{!-- O título e descrição aqui --}}
 
-      {{markdown-to-html @prop_data.desc}}
+      {{markdown-to-html simpleLineBreaks=true markdown=@prop_data.desc}}
       {{!-- A descrição tem que ser produzida de tão forma a começar com o subtítulo, seguido do conteúdo --}}
 
-      {{markdown-to-html @prop_data.short_desc}}
+      {{markdown-to-html simpleLineBreaks=true markdown=@prop_data.short_desc}}
       {{!-- Aqui vai a versão curta de descrição, que aparece na página inicial em destaque --}}
 
     </div>
@@ -62,7 +62,9 @@ direito a interação com hover e click no desktop
   <div id="galeria" class="mobile-gallery ui container">
     <h2 class="centered">Fotos da obra</h2>
     <small class="section-sub-titulo">Galeria completa de nossas imagens da obra até o momento</small>
-    <GaleryGeneric @imgStyling="height:62vh" @fotos={{@prop_data.fotos}} as |foto| />
+    <GaleryGeneric @imgStyling="height:62vh" @fotos={{@prop_data.fotos}} as |foto|>
+      <SimpleFotoWithCaption @foto={{hash url=(concat "/assets/content/projects/" @prop_data.titulo "/fotos/" foto.url) desc=foto.desc}}/>
+    </GaleryGeneric>
   </div>
 
   <div id="galeria" class="desktop-gallery ui container">

@@ -1,15 +1,20 @@
-#Construtora confidence
 
-10 de maio
+# Construtora confidence  
 
-Pronto:
-- home's landing area
-- 
+### Roadmap
 
-TODO:
-- Consertar área de obras realizadas da homepage [v]
-- adicionar sessão de fechamento para página de projeto
+TODO: - para infraestrutura
+- [x] arquitetura de conteúdo
+- [x] serviços de requests
+- [x] routeamento programado
+- [x] programação da pipeline de build e deploy online
+- programação de envio de formulário de contato
+
+TODO: - para design
+- polir a sessão de valores da empresa em design e em estrutura de conteúdo
+- [x] Consertar área de obras realizadas da homepage 
+- adicionar sessão de fechamento para página de 
 - adicionar elementos de design na lateral da página
-- adicionar logo no final do título como ele img absoluta na versao desktop
-- Adicionar uma sessão de sobre a empresa, na homepage, antes de nossos valores
+- [x] adicionar logo no final do título como ele' de img absoluta na versao desktop
+- [x] Adicionar uma sessão de sobre a empresa, na homepage, antes de nossos valores 
 - Criar a sessão de contato, na home page, antes da footer

@@ -10,6 +10,9 @@ export default class IndexRoute extends Route {
 
     return {
       valoresContent: await (await fetch(valores_url)).json(),
+      apresentativo: await (
+        await fetch('/assets/content/apresentação.md')
+      ).text(),
     };
   }
 }

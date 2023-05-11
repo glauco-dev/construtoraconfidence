@@ -1,4 +1,3 @@
 import Component from '@ember/component';
 
-export default class ProjectContentComponent extends Component {
-}
+export default class ProjectContentComponent extends Component {}

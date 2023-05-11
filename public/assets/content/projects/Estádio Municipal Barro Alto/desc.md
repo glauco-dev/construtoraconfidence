@@ -1,7 +1,9 @@
 <sub style="top:-1.5rem">Obra em andamento na cidade de Barro Alto pela Sudesb</sub>
 
 <img class="content-header-img"
-src="/assets/content/projects/Estádio Municipal Barro Alto/mapa da localização da cidade.png"/> Barro Alto É um município que se basea mais na economia de pequeno porte e economicamente agrícola, Barro Alto é destaque na produção de milho, feijão, mandioca e mamona. Possuindo elementos interessantes para o turismo como o paredão dos Tapuias e do Rio Vereda Romão Gramacho. 
+src="/assets/content/projects/Estádio Municipal Barro Alto/mapa da localização da cidade.png"/> 
+
+Barro Alto É um município que se basea mais na economia de pequeno porte e economicamente agrícola, Barro Alto é destaque na produção de milho, feijão, mandioca e mamona. Possuindo elementos interessantes para o turismo como o paredão dos Tapuias e do Rio Vereda Romão Gramacho. 
 A cidade de Barro Alto é um município no centro-norte da bahia que possui uma área aproximada de 417 km2, e uma população de 13.612  habitantes (Censo 2010 - IBGE). Está situado a cerca de 500km da capital estadual Salvador.
 
 

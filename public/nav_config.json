@@ -1,7 +1,8 @@
 {
     "index":{
+        "Nossa história": "#nossa-história",
         "Obras Realizadas" : "#sessao-obrasRealizadas",
-        "Nossos Valores" : "#sessao-nossosValores"
+        "Contamos com" : "#sessao-contamosCom"
     },
     "projeto":{
         "A obra": "#project_content_wrapper",
