@@ -3,7 +3,7 @@
     <div id="content" class="ui grid container">
 
         <div class="ui grid stackable destaque-wrapper">
-            <GaleryGeneric style="justify-content:space-around" class="home_page_carousel ui stackable grid container" @fotos={{this.projetos_to_display}} as
+            <GaleryGeneric style="justify-content:space-around; margin: 0px !important;" class="home_page_carousel ui stackable grid container" @fotos={{this.obrasRealizadas.data}} as
                 |projeto|>
                 <div id="text-content-box" class="five wide column ">
                     <div id="text-content" class=" ui basic segment">
@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="nine wide column destaque-img-wrapper ">
-                    <img class="home_featured_img" src={{projeto.featured_image.url}} alt="">
+                    <LinkTo @route="projeto" @model={{projeto.titulo}}><img class="home_featured_img" src={{projeto.featured_image.url}} alt=""></LinkTo>
                 </div>
             </GaleryGeneric>
         </div>
@@ -73,7 +73,7 @@
         max-width: 100%;
     }
 
-    #content img {
+    #content .destaque-img-wrapper>* {
         height: 60vh !important;
         object-fit: cover !important;
         width: 100%;

@@ -1,11 +1,11 @@
-<div class="app imggalery {{@classing}}"  style={{@styling}}>
-    <div id="carousel"  class="snap" style={{@carouselStyling}}>
+<div class="app imggalery {{@classing}}" style={{@styling}}>
+    <div id="carousel" class="snap" style={{@carouselStyling}}>
         {{#each @fotos as |foto index|}}
         <figure id="carousel-{{index}}" class="card-figure" ...attributes>
             {{#if (has-block)}}
-                {{yield foto}}
+            {{yield foto}}
             {{else}}
-                <SimpleFotoWithCaption @styling={{@imgStyling}} @foto={{foto}}/>
+            <SimpleFotoWithCaption @styling={{@imgStyling}} @foto={{foto}} />
             {{/if}}
         </figure>
         {{/each}}
@@ -25,7 +25,7 @@
         width: 100%;
     }
 
-    #carousel> .card-figure {
+    #carousel>.card-figure {
         min-width: 100%;
         display: flex;
         justify-content: space-between;

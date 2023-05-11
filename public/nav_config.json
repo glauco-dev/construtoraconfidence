@@ -4,6 +4,9 @@
         "Nossos Valores" : "#sessao-nossosValores"
     },
     "projeto":{
+        "A obra": "#project_content_wrapper",
+        "Etapas & Andamento": "#roadmap",
+        "Imagens": "#galeria_title"
     },
     "about" : {
         

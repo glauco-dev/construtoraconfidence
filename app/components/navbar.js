@@ -9,24 +9,29 @@ import { service } from '@ember/service';
 export default class NavBarComponent extends Component {
   // gancho do serviço de roteamento, de onde vou extrair a rota atual para o arquivo de config das sessões
   @service router;
+
   // propriedade responsiva
   @tracked nav_config_data;
+
+  // hook para angulo de rotação do menu em css
+  @tracked dropdowncontrolRotation;
+
+  OPENED_MOBILE_MENU_ANGLE = '-180deg';
+  CLOSED_MOBILE_MENU_ANGLE = '0deg';
 
   // construtor do componente, inicializa antes da renderização
   constructor() {
     super(...arguments);
 
     let checkWindowScrollY = () => {
-      setNavBarOpacity(window.pageYOffset > this.args.fadePoint )
-    }
+      setNavBarOpacity(window.pageYOffset > this.args.fadePoint);
+    };
 
     let setNavBarOpacity = (OnOff) => {
-        $('#navbar').css('opacity', OnOff? '1': '0')
-    }
-    if(this.args.doesFade) {
-      window.addEventListener('scroll', checkWindowScrollY)
-      checkWindowScrollY();
-    }
+      $('#navbar').css('opacity', OnOff ? '1' : '0');
+    };
+    window.addEventListener('scroll', checkWindowScrollY);
+    checkWindowScrollY();
 
     // testing: passou
     // console.log(this.router.currentRouteName, " <= deve ser a rota atual, ignorando qualquer outra info")
@@ -47,6 +52,18 @@ export default class NavBarComponent extends Component {
         }
       }
     );
-    
   }
+
+  changeMenuShown = () => {
+    this.dropdowncontrolRotation =
+      this.dropdowncontrolRotation == this.OPENED_MOBILE_MENU_ANGLE
+        ? this.CLOSED_MOBILE_MENU_ANGLE
+        : this.OPENED_MOBILE_MENU_ANGLE;
+    $('#navbar .collapsable-item').css(
+      'transform',
+      this.dropdowncontrolRotation == this.OPENED_MOBILE_MENU_ANGLE
+        ? 'scaleY(1)'
+        : 'scaleY(0)'
+    );
+  };
 }

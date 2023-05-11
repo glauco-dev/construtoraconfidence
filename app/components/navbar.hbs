@@ -1,22 +1,23 @@
 <div id="navbar" class="ui attached stackable menu">
     <div class="ui container">
-        <LinkTo @route="index" class="item" style="padding: 15px">
+        <LinkTo @route="index" class="item" style="padding: 15px; width: fit-content !important;">
             <img src={{root-url "/assets/logos/logo_C.svg" }} />
         </LinkTo>
         {{#each this.nav_config_data as |item|}}
-        <a class="item" href="{{item.link}}">
+        <a class="item  collapsable-item" href="{{item.link}}">
             <i class="fa-solid fa-building-circle-check"></i> {{item.text}}
         </a>
         {{/each}}
     </div>
-    <div class="right item">
+    <div class="right item stackable menu  collapsable-item">
         <LinkTo @route="about" class="item" style="padding: 15px">
-            <i class="fa-solid fa-file-contract"></i> Informações 
+            <i class="fa-solid fa-file-contract"></i> Informações
         </LinkTo>
         <LinkTo @route="contato" class="item" style="padding: 15px">
-            <i class="fa-solid fa-phone"></i> Contato 
+            <i class="fa-solid fa-phone"></i> Contato
         </LinkTo>
     </div>
+    <i {{on "click" this.changeMenuShown}} class="mobile-dropdowncontrol fa-solid fa-arrow-down-short-wide"></i>
 </div>
 
 
@@ -29,19 +30,45 @@
         height: 50px;
         z-index: 100;
         transition: 250ms ease;
-        opacity: 1;
+        opacity: {{@fade}};
     }
 
     #navbar .item {
         background-color: white;
+    }
+    #navbar .collapsable-item{
+        transition: transform 250ms ease;
     }
 
     #navbar i {
         margin-right: 10px;
         color: #105584;
     }
+
+    .mobile-dropdowncontrol {
+        transition: all ease 250ms;
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        font-size: 20px;
+    }
+
+    .mobile-dropdowncontrol {
+        transform: rotate({{this.dropdowncontrolRotation}});
+    }
+
+    @media (max-width: 767px) {
+        #navbar .collapsable-item{
+            transform: scaleX(0);
+        }
+    }
+    @media (min-width: 767px) {
+        .mobile-dropdowncontrol {
+            display: none;
+        }
+    }
 </style>
 
 <script>
-    
+
 </script>

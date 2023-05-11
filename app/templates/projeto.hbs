@@ -1,6 +1,2 @@
-<Navbar @doesFade={{false}} @fadePoint={{0}}/>
-{{#if @model.status}}
-    <ProjectContent @content_source = {{@model.url}} />
-{{else}}
-    <h2>Error</h2>
-{{/if}}
+<Navbar @fade={{0}} @fadePoint={{10}}/>
+<ProjectContent @prop_data={{@model.data}}/>

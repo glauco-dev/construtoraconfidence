@@ -25,7 +25,10 @@ direito a interação com hover e click no desktop
 <div id="project_content_wrapper">
   <div class="capa_wrapper">
     <div class="ui container">
-      <h1>{{this.titulo}}</h1>
+      <h1>{{@prop_data.titulo}}</h1>
+      <LinkTo @route="index">
+        <img class="decorative_logo" src="/assets/logos/logo_C.svg" alt="Home">
+      </LinkTo>
     </div>
   </div>
   <div id="desc" class="ui container">
@@ -33,10 +36,10 @@ direito a interação com hover e click no desktop
 
       {{!-- O título e descrição aqui --}}
 
-      {{markdown-to-html this.desc}}
+      {{markdown-to-html @prop_data.desc}}
       {{!-- A descrição tem que ser produzida de tão forma a começar com o subtítulo, seguido do conteúdo --}}
 
-      {{markdown-to-html this.short_desc}}
+      {{markdown-to-html @prop_data.short_desc}}
       {{!-- Aqui vai a versão curta de descrição, que aparece na página inicial em destaque --}}
 
     </div>
@@ -47,7 +50,7 @@ direito a interação com hover e click no desktop
     <div class="ui container">
       <h2>Roadmap</h2>
       <small class="section-sub-titulo">descrição detalhada do andamento da obra por meio de etapas</small>
-      {{markdown-to-html this.road_map_content}}
+      {{markdown-to-html @prop_data.road_map_content}}
     </div>
   </div>
 
@@ -59,20 +62,20 @@ direito a interação com hover e click no desktop
   <div id="galeria" class="mobile-gallery ui container">
     <h2 class="centered">Fotos da obra</h2>
     <small class="section-sub-titulo">Galeria completa de nossas imagens da obra até o momento</small>
-    <GaleryGeneric @imgStyling="height:62vh" @fotos={{this.fotos}} as |foto| />
+    <GaleryGeneric @imgStyling="height:62vh" @fotos={{@prop_data.fotos}} as |foto| />
   </div>
 
   <div id="galeria" class="desktop-gallery ui container">
-    <h2 class="centered">Fotos da obra</h2>
+    <h2 id="galeria_title" class="centered">Fotos da obra</h2>
     <small class="section-sub-titulo">Galeria completa de nossas imagens da obra até o momento</small>
     <ul class="image-gallery">
-      {{#each this.fotos as |foto index|}}
+      {{#each @prop_data.fotos as |foto index|}}
       <li>
-        <img src="{{foto.url}}" alt="" />
+        <img src="/assets/content/projects/{{@prop_data.titulo}}/fotos/{{foto.url}}" alt="" />
         <div class="overlay"><span>{{foto.desc}}</span></div>
       </li>
       {{/each}}
-      <!-- other items here -->
+      {{!-- other items here --}}
     </ul>
   </div>
   {{!-- --}}
@@ -170,12 +173,6 @@ direito a interação com hover e click no desktop
     text-shadow: 0 1px 0 black;
   }
 
-  #titulo-wrapper h1 img {
-    margin-right: -2.5rem;
-    margin-left: 2rem;
-    margin-top: 2rem;
-    width: 80px;
-  }
 
   #project_content_wrapper #desc {
     font-size: 12pt;
@@ -209,7 +206,24 @@ direito a interação com hover e click no desktop
     position: relative;
   }
 
-  .capa_wrapper::before {}
+  .capa_wrapper .decorative_logo {
+    position: absolute;
+    top: 3.9rem;
+    left: -30px;
+    width: 85px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  @media (max-width: 544px) {
+    .capa_wrapper .decorative_logo {
+      display: none;
+    }
+  }
+
+  .capa_wrapper .decorative_logo:hover {
+    transform: scale(1.2);
+  }
 
   .capa_wrapper h1 {
     font-size: 4rem;
