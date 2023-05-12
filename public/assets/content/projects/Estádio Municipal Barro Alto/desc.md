@@ -12,7 +12,7 @@ A maioria das pessoas que já contemplou a grandiosidade de um estádio de futeb
 É certo de que é exigido muita segurança tanto do decorrer da obra quanto após a sua entrega, pelo alto fluxo de pessoas que estarão ali celebrando momentos de alegria.
 
 <img class="content-middle-img"
-src="/assets/content/projects/Estádio Municipal Barro Alto/barro-alto-1080-43526b61.jpg"/>
+src="/assets/content/projects/Estádio Municipal Barro Alto/barro-alto-1080-43526b61.png"/>
 
 Para iniciar a construção de um estádio antes de tudo é necessário fazer uma análise da infraestrutura da cidade, do zoneamento, da contaminação do sub-solo de onde será construído, da quantidade de árvores no terreno, situação legal da propriedade, além de estudar sobre a capacidade do público, entre outros requisitos; 
 
