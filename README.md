@@ -18,3 +18,4 @@ TODO: - para design
 - [x] adicionar logo no final do título como ele' de img absoluta na versao desktop
 - [x] Adicionar uma sessão de sobre a empresa, na homepage, antes de nossos valores 
 - Criar a sessão de contato, na home page, antes da footer
+- criar galeria fullscren das fotos de projeto com modals
