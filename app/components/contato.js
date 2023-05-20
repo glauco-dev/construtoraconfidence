@@ -33,6 +33,7 @@ export default class ContatoForm extends Component {
       window.alert('Sua mensagem foi enviada!');
       console.log('ok');
     } else {
+      window.alert('Um erro ocorreu ao enviar seu contato!')
       console.log('err');
     }
   }
