@@ -34,7 +34,7 @@ export default class ContatoForm extends Component {
       console.log('ok');
     } else {
       window.alert('Um erro ocorreu ao enviar seu contato!')
-      console.log('err');
+      console.log('err', response);
     }
   }
 }

@@ -1,16 +1,6 @@
-require('dotenv').config();
+const fetch = require("node-fetch");
 
-const formData = require('form-data');
-const Mailgun = require('mailgun.js');
-const mailgun = new Mailgun(formData);
-const {
-  MAILGUN_API_KEY,
-  MAILGUN_DOMAIN,
-  FROM_EMAIL_ADDRESS,
-  CONTACT_TO_EMAIL_ADDRESS,
-} = process.env;
-
-exports.handler = async (event) => {
+exports.handler = async (event, context, callback)  => {
   const data = JSON.parse(event.body);
   if (
     !data.subject ||
@@ -21,37 +11,26 @@ exports.handler = async (event) => {
     return { statusCode: 422, body: 'Name, email, and message are required.' };
   }
 
-  console.log(
-    MAILGUN_API_KEY,
-    MAILGUN_DOMAIN,
-    FROM_EMAIL_ADDRESS,
-    CONTACT_TO_EMAIL_ADDRESS,
-    data
-  );
-
-  const mg = mailgun({
-    apiKey: MAILGUN_API_KEY,
-    domain: MAILGUN_DOMAIN,
+  //automatically generated snippet from the email preview
+  //sends a request to an email handler for a subscribed email
+  await fetch(`${process.env.URL}/.netlify/functions/emails/contact`, {
+    headers: {
+      "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,
+    },
+    method: "POST",
+    body: JSON.stringify({
+      from: data.contactEmail,
+      to: "contato@construtoraconfidence.com",
+      subject: data.subject,
+      parameters: {
+        contactName: data.contactName,
+        message: data.message,
+      },
+    }),
   });
 
-  mg.messages().send(
-    {
-      from: `Confidence Website <${FROM_EMAIL_ADDRESS}>`,
-      to: [CONTACT_TO_EMAIL_ADDRESS],
-      'h:Reply-To': data.contactEmail,
-      subject: `Novo contato: ${data.subject}`,
-      text: `Name: ${data.contactName}\nEmail: ${data.contactEmail}\nMessage:\n${data.message}`,
-      html: '',
-    },
-    (error, body) => {
-      if (error) {
-        return console.log(error);
-      }
-
-      callback(null, {
-        statusCode: 200,
-        body: 'Mail sent',
-      });
-    }
-  );
+  return {
+    statusCode: 200,
+    body: JSON.stringify("Email de contato enviado!"),
+  };
 };
