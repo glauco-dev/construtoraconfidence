@@ -72,5 +72,12 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "form-data": "^4.0.0",
+    "mailgun-js": "^0.22.0",
+    "mailgun.js": "^8.2.1",
+    "sendmail": "^1.6.1"
   }
 }
