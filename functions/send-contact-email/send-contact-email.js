@@ -34,7 +34,6 @@ exports.handler = async (event) => {
   mg.messages.create(MAILGUN_DOMAIN, {
     from: `Confidence Website <${FROM_EMAIL_ADDRESS}>`,
     to: [CONTACT_TO_EMAIL_ADDRESS],
-    'h:Reply-To': data.contactEmail,
     subject: `Novo contato: ${data.subject}`,
     text: `Name: ${data.contactName}\nEmail: ${data.contactEmail}\nMessage:\n${data.message}`,
   });
