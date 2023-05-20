@@ -1,8 +1,8 @@
 <section id="sessao-contamosCom">
     <div class="container">
         <div class="ui container grid stackable wrapper">
-            <div class="ui two grid container row">
 
+            <div class="ui two grid container row">
                 <div class="topico_content ui" style="">
                     <img class="ui display_img" src={{root-url this.atual_content.display_img}} alt="">
                     <div class="text_wrapper">
@@ -11,6 +11,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="ui row centered controls" style="gap:20px">
                 {{#each @valoresContent as |valorContent index|}}
                 <img {{on "click" (fn this.changeContentIndex index)}} src="{{valorContent.icon}}" alt=""
@@ -34,7 +35,7 @@
     }
 
     #sessao-contamosCom>.container>.wrapper {
-        gap: 20px
+        gap: 0px
     }
 
     #sessao-contamosCom .controls img {

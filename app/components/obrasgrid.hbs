@@ -1,0 +1,89 @@
+{{yield}}
+
+<section id="Obras-Realizadas-Title" class="ui container">
+    <h2 >Obras Realizadas</h2>
+    <small class="section-sub-titulo">lista completa de obras realizadas ou em andamento</small>
+    <DecorativeLogo />
+</section>
+
+<div class="ui grid container stackable">
+
+    <div class="four wide column">
+        <div id="menu-de-filtros" class="ui vertical fluid tabular menu">
+            <div class="header item">Filtrar</div>
+            {{#each @allTags as |tag index|}}
+            <a {{on "click" (fn this.toggleTag index)}} class={{@isTagSelected index}}>
+                {{tag}}
+            </a>
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="twelve wide stretched column">
+        <div id="obras-grid" class="ui container grid equal width relaxed stackable centered" style="align-items: center;">
+
+            {{#each @projetos as |projeto|}}
+            <LinkTo @route="projeto" @model={{projeto.titulo}} class="ui fluid card">
+                <div class="ui slide masked reveal image">
+                    <img src="/assets/content/projects/{{projeto.titulo}}/fotos/{{projeto.firstPhoto.url}}"
+                        class="visible content">
+                    <img src="/assets/content/projects/{{projeto.titulo}}/fotos/{{projeto.secondPhoto.url}}"
+                        class="hidden content">
+                </div>
+                <div class="content">
+                    <a class="header">{{projeto.titulo}}</a>
+                    {{!-- <div class="meta">
+                        <span class="date"> {{markdown-to-html projeto.short_desc}}</span>
+                    </div> --}}
+                    <div class="description" style="text-align: left">
+                        {{markdown-to-html projeto.short_desc}}
+                    </div>
+                </div>
+                <div class="extra content">
+
+                </div>
+            </LinkTo>
+            {{/each}}
+        </div>
+    </div>
+
+
+
+</div>
+
+<style>
+    #Obras-Realizadas-Title {
+        height: 9.2rem;
+        padding-left: 1.5rem;
+        color: #323232;
+        font-size: 150%;
+    }
+
+    #Obras-Realizadas-Title h2{
+        color: #105584;
+        font-size: 200%;
+    }
+
+    #obras-grid .card {
+        width: 350px;
+        margin: 2rem;
+    }
+
+    #menu-de-filtros {
+        z-index: 100;
+    }
+
+
+
+    #obras-grid .ui.slide.masked.reveal.image {
+        display: flex;
+        flex-direction: row;
+        height: 200px;
+    }
+
+    #obras-grid .ui.slide.masked.reveal.image img {
+        object-fit: cover;
+        object-position: top;
+
+    }
+</style>

@@ -26,9 +26,7 @@ direito a interação com hover e click no desktop
   <div class="capa_wrapper">
     <div class="ui container">
       <h1>{{@prop_data.titulo}}</h1>
-      <LinkTo @route="index">
-        <img class="decorative_logo" src="/assets/logos/logo_C.svg" alt="Home">
-      </LinkTo>
+      <DecorativeLogo/>
     </div>
   </div>
   <div id="desc" class="ui container">
@@ -200,7 +198,7 @@ direito a interação com hover e click no desktop
   }
 
   .capa_wrapper {
-    height: 13.2rem;
+    height: 9.2rem;
     margin-bottom: -3.2rem;
     display: flex;
     align-items: end;
@@ -208,24 +206,9 @@ direito a interação com hover e click no desktop
     position: relative;
   }
 
-  .capa_wrapper .decorative_logo {
-    position: absolute;
-    top: 3.9rem;
-    left: -30px;
-    width: 85px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
+  .capa_wrapper 
 
-  @media (max-width: 544px) {
-    .capa_wrapper .decorative_logo {
-      display: none;
-    }
-  }
-
-  .capa_wrapper .decorative_logo:hover {
-    transform: scale(1.2);
-  }
+ 
 
   .capa_wrapper h1 {
     font-size: 4rem;
@@ -237,10 +220,7 @@ direito a interação com hover e click no desktop
     margin-bottom: 2rem;
   }
 
-  .section-sub-titulo {
-    top: -1.5rem;
-    position: relative;
-  }
+
 
   .mobile-gallery {
     display: none !important;

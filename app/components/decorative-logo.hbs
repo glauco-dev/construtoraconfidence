@@ -1,0 +1,24 @@
+<LinkTo @route="index">
+    <img class="decorative_logo" src="/assets/logos/logo_C.svg" alt="Home">
+</LinkTo>
+
+<style>
+    .decorative_logo {
+        position: absolute;
+        top: 3.9rem;
+        left: -30px;
+        width: 85px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    @media (max-width: 544px) {
+        .capa_wrapper .decorative_logo {
+            display: none;
+        }
+    }
+
+    .capa_wrapper .decorative_logo:hover {
+        transform: scale(1.2);
+    }
+</style>

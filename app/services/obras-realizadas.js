@@ -2,27 +2,40 @@ import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 
 export default class ObrasRealizadasService extends Service {
-  @tracked data = [];
+  @tracked projetos = [];
+  @tracked tags = [];
 
-  async load() {
-    if (this.data.length !== 0) return this.data;
+  constructor() {
+    super(...arguments);
+    this.get_Projetos().then((data) => {
+      this.projetos = data;
+    });
+    this.get_Tags().then((data) => {
+      this.tags = data;
+    });
+  }
+
+  async get_Projetos() {
+    if (this.projetos.length > 0) return this.projetos;
+
     let response = await fetch(window.location.origin + '/projetos.json');
-    let projects_info_data = await response.json();
+    let projects_metadata = await response.json();
+
     let projects_url =
-      window.location.origin + projects_info_data.projects_url_namespace;
+      window.location.origin + projects_metadata.projects_url_namespace;
     // pegando o endereço real na esfera pública
 
-    const projetos_to_display = projects_info_data.projects.map(
-      (project_name) => {
-        return projects_url + project_name;
-      }
+    const projetos_to_display = projects_metadata.projects.map(
+      (project_metadata) => ({
+        ...project_metadata,
+        project_url: projects_url + project_metadata.titulo,
+      })
     );
 
-    // criando request de todos os projetos
     return Promise.all(
-      projetos_to_display.map(async (project_url) => {
+      projetos_to_display.map(async (project_metadata) => {
         //montagem de propriedades por requests
-        let titulo = project_url.split('/').pop();
+        let project_url = projects_url + project_metadata.titulo;
         let featured_imgGallery_ref = await (
           await fetch(project_url + '/fotos.json')
         ).json();
@@ -39,13 +52,23 @@ export default class ObrasRealizadasService extends Service {
 
         // retornando para a array de promessas o dado ja digerido
         return {
-          titulo,
+          ...project_metadata,
           featured_image: img_data,
           short_desc,
           desc,
           fotos,
         };
       })
-    ).then((data) => (this.data = data));
+    );
+  }
+
+  async get_Tags() {
+    if (this.tags.length > 0) return this.tags;
+
+    let response = await fetch(window.location.origin + '/projetos.json');
+    let projects_metadata = await response.json();
+
+    this.tags = projects_metadata.tags;
+    return projects_metadata.tags;
   }
 }

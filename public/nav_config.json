@@ -1,15 +1,19 @@
 {
     "index":{
         "Nossa história": "#nossa-história",
-        "Obras Realizadas" : "#sessao-obrasRealizadas",
+        "Obras em destaque" : "#sessao-obrasRealizadas",
         "Contamos com" : "#sessao-contamosCom"
     },
     "projeto":{
         "A obra": "#project_content_wrapper",
         "Etapas & Andamento": "#roadmap",
-        "Imagens": "#galeria_title"
+        "Imagens": "#galeria_title",
+        "Todas obras": "/todasobras"
     },
     "about" : {
+        
+    },
+    "todasobras": {
         
     }
 }

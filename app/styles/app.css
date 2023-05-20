@@ -56,6 +56,11 @@ section {
   padding-top: 5rem;
 }
 
+.section-sub-titulo {
+  top: -1.5rem;
+  position: relative;
+}
+
 #sectionTitle {
   font-family: "segoe";
   font-weight: 100;

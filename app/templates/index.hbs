@@ -28,9 +28,9 @@ cidades e setores que trabalha
 
 <style>
     #apresentativo {
-        font-size: 150%;
+        font-size: 135%;
         padding-bottom: 10rem;
-        padding-top: 0rem;
+        padding-top: 2rem;
         padding-inline: 6vw;
         margin-top: -105vh;
     }
@@ -67,7 +67,7 @@ cidades e setores que trabalha
 
 {{!-- Sessão de portifólio inicial registrada como bluepaper section, por causa do papel de parede ao fundo que imita
 uma blueprint --}}
-<BluepaperSection />
+<BluepaperSection @obras={{@model.obrasDestaque}} />
 
 {{!-- sessão de valores da empresa, em tópicos TODO **polir** --}}
 <ValoresSection @valoresContent={{@model.valoresContent}} />
@@ -80,3 +80,9 @@ então:
 ele ja viu:
 as o
 --}}
+
+{{!-- 
+    Sessão de contato para a empresa
+ --}}
+
+ <Contato/>

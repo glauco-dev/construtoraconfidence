@@ -11,4 +11,5 @@ Router.map(function () {
   this.route('projeto', { path: '/projeto/:projeto_id' });
   this.route('about');
   this.route('contato');
+  this.route('todasobras');
 });

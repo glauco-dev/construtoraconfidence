@@ -1,1 +1,62 @@
 {{yield}}
+<div id="contato">
+    <div class="ui raised card ">
+        <div class="content">
+            <div class="header" style="margin-bottom: 15px; border-bottom: 2px solid #105584">Envie uma mensagem para
+                entrar em contato</div>
+            <div class="ui equal width form container">
+                <div class="ui grid stackable field" style="gap:15px; display: flex">
+                    <div class="ui left icon input">
+                        <input type="text" placeholder="Seu nome">
+                        <i class="users icon"></i>
+                    </div>
+                    <div class="ui left icon input">
+                        <input type="text" placeholder="Seu contato (tel / email)">
+                        <i class="address icon"></i>
+                    </div>
+                </div>
+                <div class="ui grid stackable field">
+                    <div class="ui left icon input">
+                        <input type="text" placeholder="Natureza">
+                        <i class="check icon"></i>
+                    </div>
+                </div>
+                <div class="ui grid stackable field">
+                    <label>Mensagem para contato</label>
+                    <textarea rows="6"></textarea>
+                </div>
+                <div class="ui submit button">Enviar</div>
+            </div>
+        </div>
+    </div>
+    <img src="{{root-url "/assets/imgs/sampleemail.png"}}" alt="" class="back-img">
+</div>
+
+<style>
+    #contato {
+        height: clamp(300px, 60vh, 100vh);
+        margin-bottom: clamp(20px, 10vh, 15vh);
+    }
+
+    #contato .card {
+        width: 820px;
+        z-index: 10;
+        margin-inline: clamp(10px, 10vw, 20vw);
+        margin-top: clamp(20px, 25vh, 30vh);
+        max-width: 80vw;
+    }
+
+    #contato .card .content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #contato .back-img {
+        position: absolute;
+        width: 40%;
+        right: 2em;
+        margin-top: -15em;
+        z-index: 9;
+    }
+</style>

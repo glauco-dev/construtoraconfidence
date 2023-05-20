@@ -10,12 +10,16 @@
         {{/each}}
     </div>
     <div class="right item stackable menu  collapsable-item">
+        {{yield}}
+        <LinkTo @route="todasobras" class="item" style="padding: 15px">
+            <i class="fa-solid fa-file-contract"></i> Todas as obras
+        </LinkTo>
         <LinkTo @route="about" class="item" style="padding: 15px">
             <i class="fa-solid fa-file-contract"></i> Informações
         </LinkTo>
-        <LinkTo @route="contato" class="item" style="padding: 15px">
+        <a href="/#contato" class="item" style="padding: 15px">
             <i class="fa-solid fa-phone"></i> Contato
-        </LinkTo>
+        </a>
     </div>
     <i {{on "click" this.changeMenuShown}} class="mobile-dropdowncontrol fa-solid fa-arrow-down-short-wide"></i>
 </div>
