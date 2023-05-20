@@ -11,11 +11,6 @@ const {
 } = process.env;
 
 exports.handler = async (event) => {
-  const mg = mailgun.client({
-    username: 'api',
-    key: MAILGUN_API_KEY,
-  });
-
   const data = JSON.parse(event.body);
   if (
     !data.subject ||
@@ -34,16 +29,29 @@ exports.handler = async (event) => {
     data
   );
 
-  mg.messages
-    .create(MAILGUN_DOMAIN, {
+  const mg = mailgun({
+    apiKey: MAILGUN_API_KEY,
+    domain: MAILGUN_DOMAIN,
+  });
+
+  mg.messages().send(
+    {
       from: `Confidence Website <${FROM_EMAIL_ADDRESS}>`,
       to: [CONTACT_TO_EMAIL_ADDRESS],
       'h:Reply-To': data.contactEmail,
       subject: `Novo contato: ${data.subject}`,
       text: `Name: ${data.contactName}\nEmail: ${data.contactEmail}\nMessage:\n${data.message}`,
-    })
-    .then((msg) => console.log(msg)) // logs response data
-    .catch((err) => console.log(err)); // logs any error;
+      html: '',
+    },
+    (error, body) => {
+      if (error) {
+        return console.log(error);
+      }
 
-  return { statusCode: 200, body: 'foi' };
+      callback(null, {
+        statusCode: 200,
+        body: 'Mail sent',
+      });
+    }
+  );
 };
