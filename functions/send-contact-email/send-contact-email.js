@@ -26,6 +26,11 @@ exports.handler = async (event) => {
     return { statusCode: 422, body: 'Name, email, and message are required.' };
   }
 
+  console.log(MAILGUN_API_KEY,
+    MAILGUN_DOMAIN,
+    FROM_EMAIL_ADDRESS,
+    CONTACT_TO_EMAIL_ADDRESS, data)
+
   mg.messages.create(MAILGUN_DOMAIN, {
     from: `Confidence Website <${FROM_EMAIL_ADDRESS}>`,
     to: [CONTACT_TO_EMAIL_ADDRESS],
