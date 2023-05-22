@@ -12,11 +12,6 @@
     "Casa"
   ],
   "projects": [
-    {"tags":[0,1,7], "titulo":"Estádio Municipal Barro Alto"},
-    {"tags":[0,2,8], "titulo":"Casa Haras Club"},
-    {"tags":[0,2], "titulo":"Comercio HME"},
-    {"tags":[0,3,7], "titulo":"Estádio Municipal de Cafarnaum"},
-    {"tags":[0,4], "titulo":"Muquem do São Francisco"},
-    {"tags":[0,5,6,7], "titulo":"Reforma Estadio de Santa Maria da Vitória"}
+    {"tags":[0,1,7], "titulo":"Estádio Municipal Barro Alto"}
   ]
 }
