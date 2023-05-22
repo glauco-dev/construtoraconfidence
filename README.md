@@ -1,6 +1,13 @@
 
-# Construtora confidence  
+# Construtora confidence - website  
+Este é um trabalho de front-end desenvolvido para uma empresa de construção civil.
+Objetivos desse website é o de ser um portifólio para a empresa, onde seus clientes e colaboradores podem acessar e acompanhar o andamento das obras a distância.
 
+Seus status de deployment no servidor
+[![Netlify Status](https://api.netlify.com/api/v1/badges/34f8b23e-5996-40fa-b167-557e1698f13a/deploy-status)](https://app.netlify.com/sites/bucolic-gelato-f4ad3f/deploys)
+
+
+Abaixo, roadmap de como anda o desenvolvido do website
 ### Roadmap
 
 TODO: - para infraestrutura
